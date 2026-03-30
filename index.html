@@ -40,6 +40,11 @@
             }
         }
     </script>
+    <style>
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes bounce-subtle { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
+.animate-bounce-subtle { animation: bounce-subtle 2s infinite ease-in-out; }
+</style>
    <link rel=" stylesheet" href="style.css">
     
 </head>
@@ -130,6 +135,11 @@
             </div>
         </div>
     </div>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 opacity-40 hover:opacity-100 transition-opacity">
+  <svg width="40" height="60" viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="animate-bounce-subtle">
+    <path d="M20 5V55M20 55L35 40M20 55L5 40" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray: 100; stroke-dashoffset: 100; animation: draw 2s forwards infinite;" />
+  </svg>
+</div>
 </section>
 
     <!-- Problem Section -->
