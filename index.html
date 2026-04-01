@@ -589,7 +589,29 @@
         </div>
     </div>
 </section>
-   
+
+
+    <div id="urgent-popup" class="fixed inset-0 z-[200] hidden flex items-center justify-center px-4">
+    <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
+    
+    <div class="relative bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl text-center transform transition-all border border-slate-100">
+        <button onclick="closePopup()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+            <i class="fas fa-times text-xl"></i>
+        </button>
+
+        <div class="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
+            <i class="fas fa-bolt text-red-600 text-3xl"></i>
+        </div>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-2 font-ibm-plex-sans-arabic" dir="rtl">فرصة أخيرة!</h3>
+        <p class="text-slate-600 mb-8 font-ibm-plex-sans-arabic" dir="rtl">متبقي **مقعدين فقط** لاكتمال الدفعة الحالية. لا تدع الفرصة تفوتك!</p>
+
+      <a href="https://wa.me/201505607621?text=أريد%20الانضمام%20للمسار" 
+   class="block w-full bg-slate-900 text-white py-4 rounded-2xl font-bold hover:bg-black transition-all shadow-lg active:scale-95 text-center">
+    احجز مقعدك الآن
+</a>
+    </div>
+</div>
 
   <script src="script.js"></script>
 
