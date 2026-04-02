@@ -340,39 +340,3 @@
 
         console.log('Ludan webpage loaded successfully with all interactive features!');
 
-  document.addEventListener("DOMContentLoaded", function() {
-        const popup = document.getElementById('urgent-popup');
-        const expiryTime = 24 * 60 * 60 * 1000; // 24 ساعة بالملي ثانية
-        const now = new Date().getTime();
-        
-        // جلب وقت أول زيارة من الذاكرة
-        let popupStartTime = localStorage.getItem('popupStartTime');
-
-        if (!popupStartTime) {
-            // إذا كانت هذه أول زيارة، نسجل الوقت ونظهر الـ Popup بعد ثانية واحدة
-            localStorage.setItem('popupStartTime', now);
-            setTimeout(() => {
-                popup.classList.remove('hidden');
-            }, 1500); 
-        } else {
-            // إذا زار الموقع سابقاً، نتأكد هل مر 24 ساعة؟
-            if (now - popupStartTime < expiryTime) {
-                // إذا لم تمر 24 ساعة، نظهر الـ Popup
-                setTimeout(() => {
-                    popup.classList.remove('hidden');
-                }, 1500);
-            } else {
-                // إذا مر أكثر من 24 ساعة، يظل الـ Popup مخفياً للأبد
-                popup.remove(); 
-            }
-        }
-    });
-
-    // وظيفة إغلاق النافذة عند الضغط على X
-    function closePopup() {
-        document.getElementById('urgent-popup').style.opacity = '0';
-        setTimeout(() => {
-            document.getElementById('urgent-popup').classList.add('hidden');
-        }, 300);
-    }
-
